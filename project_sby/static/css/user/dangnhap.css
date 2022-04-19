@@ -1,0 +1,92 @@
+.dangnhapsection{
+    margin: 30px 0;
+}
+.dangnhapsection .gird{
+    width: 100%;
+    display: block;
+}
+
+.dangnhapsection .container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    
+}
+.dangnhapsection .container::before {
+
+}
+.dangnhapsection h1{
+    position: absolute; 
+    text-align: center;
+    color: black;
+    font-size: 35px;
+    margin-top: -400px;
+    font-family: 'Oswald', sans-serif;
+}
+
+.dangnhapsection .row{
+    width: 674px;
+    height: 320px;
+}
+.dangnhapsection .row .hinhanh{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.dangnhapsection .row .hinhanh::before {
+    content: '';
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-image: url(../img/realestate3.jpg);
+    background-size:cover;
+    background-position: top center;
+    opacity: 1;
+}  
+
+.dangnhapsection .row .ttdangky{
+    background: white;
+}
+.dangnhapsection .form-control{
+    font-size: 13px; 
+    border-bottom: 3px solid black !important;
+}
+.dangnhapsection .ttdangky .icon a{
+    padding: 0px 10px;
+}
+.dangnhapsection .icon-bar{
+    color: black;
+}
+.dangnhapsection .gird.wide{
+    max-width: 800px;
+    margin: 0 auto;
+}
+/* Tablet - PC low resolution */
+@media(min-width: 1024px) and (max-width:1366px){
+    .dangnhapsection .wide{
+        width: 800px;
+    }
+} 
+@media(min-width: 768px) and (max-width:1024px){
+    .dangnhapsection .wide{
+        width: 600px;
+    }
+    .dangnhapsection .row{
+        width: 550px;
+    }
+    .dangnhapsection .icon .icon-bar {
+       font-size: 11px;
+       padding: 0px 0px;
+       margin-right: 20px !important;
+    }
+}
+@media(min-width: 420px) and (max-width:577px){
+    .dangnhapsection .wide{
+        width: 350px;
+    }
+}

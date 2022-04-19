@@ -1,0 +1,275 @@
+{% extends 'user/base.html' %}
+{% load static %}
+
+{% block title %}Bất động sản Cần Thơ{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/user/gioithieu.css' %}">
+    <link rel="stylesheet" href="{% static 'css/user/vechungtoi.css' %}">
+{% endblock %}
+
+{% block content %}
+    <section class="section-about-1">
+        <div class="about-1"
+             style="background: url({% static 'img/pexels-paweł-l-1121782.jpg' %});
+                     height: 400px;
+                     background-size: cover;
+                     background-repeat: no-repeat;">
+            <h1>GIỚI THIỆU</h1>
+        </div>
+    </section>
+
+    <section class="section-about-2">
+        <div class="container" style="max-width: 1200px;">
+            <div class="row">
+                <div class="col-12 col-sm-6">
+                    <img class="img-about" src="http://templates.thememodern.com/theratio/images/image1-aboutus.png"
+                         alt="">
+                </div>
+                <div class="col-12 col-sm-6">
+                    <div style="margin-left: 60px;">
+                        <h4 id="about-company">[ GIỚI THIỆU CHUNG ]</h4>
+                        <h1 style="font-size: 42px;">Bất Động Sản Cần Thơ</h1>
+                        <h4 style="opacity: 0.7;">................</h4>
+                        <p style="font-size: 16px; text-align: justify; font-weight: 400; margin-bottom: 60px;">
+                            Công ty cổ phần Dịch vụ & Địa ốc Bất Động Sản Cần Thơ, là thương hiệu bất động sản hàng đầu
+                            tại Việt Nam. Trong lĩnh vực Phân phối & Cho thuê, Quản lí bất động sản, Quản lí tòa
+                            nhà,...Luôn nỗ lực cung cấp giải pháp bất động sản toàn diện và chuyên nghiệp
+                            nhất.
+                            <br> Đối với khách hàng, chúng tôi giúp bạn sở hữu và thuê các bất động sản chất lượng với
+                            mức giá phù hợp, tiềm năng sinh lời cao, thông tin minh bạch và thủ tục tiện lợi. Đối với
+                            các đối tác, chúng tôi tư vấn và quản lý bán
+                            hàng bằng chiến lược linh hoạt và đội ngũ kinh nghiệm.
+                        </p>
+                        <a href="{% url 'home' %}" id="a-view-project"
+                           style="border: 2px solid black; padding: 20px 40px; text-decoration: none; font-size: 14px; background-color: black; color: white;">VỀ
+                            TRANG CHỦ </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-about-3">
+        <div class="container">
+            <h4 style="opacity: 0.7; color: white; text-align: center; padding-top: 40px; margin-bottom: 0px;">[ COMPANY
+                STRATEGY ]</h4>
+            <h1 style="font-size: 42px; color: white; text-align: center; margin-top: 0; margin-bottom: 0;">Nhà Đất Cần
+                Thơ
+            </h1>
+            <h4
+                    style="opacity: 0.7; font-size: 20px; color: white; text-align: center; margin-top: 0; margin-bottom: 50px;">
+                ................
+            </h4>
+            <div class="row">
+                <div class="col"></div>
+                <div class="col"></div>
+                <div class="col"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-about-4">
+        <div class="page-content page-container container" id="page-content">
+            <div class="padding">
+                <div class="row container d-flex justify-content-center">
+                    <div class="col-6 grid-margin stretch-card col-about">
+                        <div class="card ">
+                            <div class="card-body">
+                                <h4 class="card-title">Các câu hỏi được đặt ra ?</h4>
+                                <p class="card-description">Bất động sản Cần Thơ</p>
+                                <div class="mt-4">
+                                    <div class="accordion" id="accordion" role="tablist">
+                                        <div class="card">
+                                            <div class="card-header" role="tab" id="heading-1">
+                                                <h6 class="mb-0"><a data-toggle="collapse" href="#collapse-1"
+                                                                    aria-expanded="false" aria-controls="collapse-1"
+                                                                    data-abc="true"
+                                                                    class="collapsed">Về khát vọng vươn xa ? </a></h6>
+                                            </div>
+                                            <div id="collapse-1" class="collapse" role="tabpanel"
+                                                 aria-labelledby="heading-1" data-parent="#accordion">
+                                                <div class="card-body">
+                                                    <div class="row">
+                                                        <div class="col-12">
+                                                            <p class="mb-0">Định hướng đa ngành nghề,đa sở hữu và hội
+                                                                nhập quốc tế.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card ">
+                                            <div class="card-header" role="tab" id="heading-3">
+                                                <h6 class="mb-0"><a class="collapsed" data-toggle="collapse"
+                                                                    href="#collapse-3" aria-expanded="false"
+                                                                    aria-controls="collapse-3" data-abc="true">Về dự án
+                                                    ?</a></h6>
+                                            </div>
+                                            <div id="collapse-3" class="collapse" role="tabpanel"
+                                                 aria-labelledby="heading-3" data-parent="#accordion">
+                                                <div class="card-body">
+                                                    <p class="mb-0">Bất động sản Cần Thơ giới thiệu đến khách hàng những
+                                                        dự án có đầy đủ pháp lý, có hạ tầng giao thông - tiện ích chất
+                                                        lượng cao, đồng bộ. Chúng tôi có những chuyên gia và các tư vấn
+                                                        viên bất động sản chuyên
+                                                        nghiệp trên 20 tỉnh - thành phố, cung cấp Vòng Dịch vụ khép kín
+                                                        bao gồm nghiên cứu thị trường, lập kế hoạch quản lý dự án, định
+                                                        giá, tư vấn bán hàng và marketing, tư vấn tài chính, thiết kế
+                                                        nội thất,
+                                                        thủ tục pháp lý...</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card ">
+                                            <div class="card-header" role="tab" id="heading-2">
+                                                <h6 class="mb-0"><a class="collapsed" data-toggle="collapse"
+                                                                    href="#collapse-2" aria-expanded="false"
+                                                                    aria-controls="collapse-2" data-abc="true">Về yếu tố
+                                                    con người ?
+                                                </a></h6>
+                                            </div>
+                                            <div id="collapse-2" class="collapse" role="tabpanel"
+                                                 aria-labelledby="heading-2" data-parent="#accordion">
+                                                <div class="card-body">
+                                                    <p> Chúng tôi tự hào đã xây dựng được nét văn hóa doanh nghiệp
+                                                        riêng, tạo môi trường lý tưởng cho mỗi cá nhân phát triển sự
+                                                        nghiệp trong lĩnh vực bất động sản.</p>
+                                                    <ol class="pl-3 mt-4">
+                                                        <li>Đội ngũ nhân sự được đào tạo chuyên nghiệp, tận tâm, năng
+                                                            động và sáng tạo.
+                                                        </li>
+                                                        <li>Cung cấp cho mỗi nhân sự hệ thống vận hành chuyên nghiệp,
+                                                            chính sách minh bạch, công cụ tiên tiến và các chương trình
+                                                            đào tạo định kỳ nhằm đảm bảo tính hiệu quả, động lực làm
+                                                            việc và quyền lợi xứng
+                                                            đáng cho từng cá nhân
+                                                        </li>
+                                                        <li>Quy trình làm việc đề cao tính chuyên nghiệp và hoạt động
+                                                            đội nhóm, phối hợp nhuần nhuyễn giữa các phòng ban tạo thành
+                                                            quy trình thống nhất.
+                                                        </li>
+                                                    </ol>
+                                                    <br>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6"
+                         style=" background-image: url('{% static 'img/hinh12.jpg' %}');
+                                 background-size: 100%;
+                                 background-repeat: no-repeat;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="block b-core-values">
+            <div class="block-header p-5">
+                <h2 class="block-title text-center">Giá trị cốt lõi</h2>
+                <hr class="mr-5">
+            </div>
+            <div class="container-fluid">
+                <div class="row justify-content-center">
+                    <div class="item1 col-12 col-sm-4 col-md-3 p-4 ">
+                        <div class="wrap-1">
+                            <div>
+                                <h5>Chủ động</h5>
+                                <p>Chúng tôi đã từng là start up tiên phong cung cấp giải pháp vận tải thân thiện với
+                                    môi trường. Và đến nay, mỗi thành viên của chúng tôi đều mang trong mình tinh thần
+                                    tiên phong đó, luôn có tư duy độc lập, tinh thần làm chủ,
+                                    và không ngại khó.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item2 col-12 col-sm-4 col-md-3 p-4 ">
+                        <div class="wrap-2">
+                            <div>
+                                <h5>Hiệu quả</h5>
+                                <p>Phương châm của chúng tôi là giảm thiểu tối đa lãng phí, tăng hiệu quả hoạt động bất
+                                    cứ khi nào có thể, cho chính chúng tôi, đối tác và cả khách hàng.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item3 col-12 col-sm-4 col-md-3 p-4 ">
+                        <div class="wrap-3">
+                            <div>
+                                <h5>Quan tâm</h5>
+                                <p>Chúng tôi luôn tự ý thức rằng mỗi hành động của mình đều gây ảnh hưởng đến xã hội
+                                    xung quanh. Chúng tôi quan tâm đến mọi tương tác xung quanh mình từ khách hàng, đối
+                                    tác đến cả xã hội và môi trường.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid" style="margin-bottom: 50px;">
+                <div class="row justify-content-center">
+                    <div class="item4 col-12 col-sm-4 col-md-3 p-4">
+                        <div class="wrap-4">
+                            <div>
+                                <h5>Tác động xã hội</h5>
+                                <p>Không chỉ dừng lại mục tiêu về chỉ số kinh doanh, Bất động sản Cần Thơ coi tác động
+                                    xã hội là một chỉ số quan trọng, kim chỉ nam cho thành công và tích cực đo lường nó.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item5 col-12 col-sm-4 col-md-3 p-4">
+                        <div class="wrap-5">
+                            <div>
+                                <h5>Chia sẻ</h5>
+                                <p>Chiến lược kinh doanh của chúng tôi xoay quanh tinh thần chia sẻ: chia sẻ không gian,
+                                    chia sẻ trải nghiệm, chia sẻ kinh tế. Với mỗi đối tác, kiến thức không có tính giới
+                                    hạn và sở hữu. Để cùng nhau tốt hơn. Together is better.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item6 col-12 col-sm-4 col-md-3 p-4">
+                        <div class="wrap-6">
+                            <div>
+                                <h5>Bền bỉ</h5>
+                                <p>Kiên trì theo đuổi mục tiêu tạo tác động xã hội trong bối cảnh kinh tế thị trường
+                                    khắc nghiệt là điều không dễ. Chúng tôi đã vượt qua những giai đoạn khó khăn nhất,
+                                    đã làm được, và nhận không ít khen ngợi từ cộng đồng. Đến
+                                    hôm nay, các Dichunger vẫn tiếp tục cần mẫn nối dài những cố gắng ấy, cho đến khi
+                                    thành công.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="container">
+                <div class="block-body">
+                    <div class="row">
+                        <div class="block-header p-5">
+                            <h2 class="block-title text-center">Tham gia cùng chúng tôi</h2>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col-4">
+                                <div class="d-grid col-9 mx-auto">
+                                    <a class="button-larger" href="vanchuyen.html">Trở thành đối tác kinh doanh</a>
+
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="d-grid col-9 mx-auto">
+                                    <a class="button-larger" href="vanchuyen.html">Làm việc cùng chúng tôi</a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </section>
+{% endblock %}
+
+{% block script %}{% endblock %}

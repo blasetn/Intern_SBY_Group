@@ -1,0 +1,104 @@
+{% extends 'user/base.html' %}
+{% load static %}
+
+{% block title %}Bất động sản Cần Thơ{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/user/chitietblog.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="tqtieude">
+                    <h2 class="tieude">{{ blog_detail.title }}</h2>
+                    <i class="far fa-calendar-alt iconce"></i> <span
+                        class="blog-author">{{ blog_detail.date_created }}</span>
+                    <div class="chude">
+{#                        <div class="cd">Chủ đề:<span class="tag-content bg-success">Đất</span></div>#}
+                    </div>
+                </div>
+                <div class="noidung">
+                    {% for item in image %}
+                        <img class="image" src="{{ MEDIA_URL }}{{ item.link }}">
+                    {% endfor %}
+                    <p>{{ blog_detail.content }}</p>
+                    {#                    <p class="ndchinh"><b>Trong 6 tháng đầu năm 2021, phía Tây Hà Nội tiếp tục dẫn đầu thị trường trong lĩnh vực Biệt thự/ Nhà liền kề cũng như tăng trưởng trong lĩnh vực Căn hộ dịch vụ và Cho thuê thương mại</b></p>#}
+                    {#                    <p>Ở lĩnh vực căn hộ dịch vụ, thị trường Hà Nội có tổng nguồn cung tăng mạnh 20% theo năm, đạt 5.500 căn. Sau thời gian dài chờ đợi, hai dự án Hạng B tại quận Ba Đình và Đống Đa cung cấp 136 căn. Tỷ trọng căn Hạng A ổn định trong vòng#}
+                    {#                        5 năm qua ở mức 53%, phần lớn được quản lý bởi Ascott và thương hiệu mới Oakwood. Nguồn cung tương lai ghi nhận 2.400 căn từ 19 dự án. Các đơn vị quản lý nước ngoài sẽ nắm giữ 96% số lượng căn tương lai. CapitaLand mua lại dự án#}
+                    {#                        Somerset Metropolitan West Hanoi quy mô 364 căn, dự kiến sẽ khuấy động khu vực phía Tây sau thời gian dài yên ắng.</p>#}
+                    {#                    <p>Đáng chú ý, trong khi giá thuê căn hộ dịch vụ trên thị trường giảm xuống còn 24 USD/m2/tháng thì trong vòng 5 năm trở lại đây, quận Cầu Giấy luôn duy trì mức giá thuê cao nhất, đạt 32 USD/m2/tháng trong 6 tháng đầu năm 2021. Khách#}
+                    {#                        thuê Hàn Quốc vượt qua Nhật Bản để chiếm đa số tại quận Cầu Giấy.</p>#}
+                    {##}
+                    {#                    <i class="chuthich">Phía Tây Hà Nội đón nhiều nguồn cung mới trong nửa đầu năm 2021</i>#}
+                    {#                    <p>Ở lĩnh vực căn hộ dịch vụ, thị trường Hà Nội có tổng nguồn cung tăng mạnh 20% theo năm, đạt 5.500 căn. Sau thời gian dài chờ đợi, hai dự án Hạng B tại quận Ba Đình và Đống Đa cung cấp 136 căn. Tỷ trọng căn Hạng A ổn định trong vòng#}
+                    {#                        5 năm qua ở mức 53%, phần lớn được quản lý bởi Ascott và thương hiệu mới Oakwood. Nguồn cung tương lai ghi nhận 2.400 căn từ 19 dự án. Các đơn vị quản lý nước ngoài sẽ nắm giữ 96% số lượng căn tương lai. CapitaLand mua lại dự án#}
+                    {#                        Somerset Metropolitan West Hanoi quy mô 364 căn, dự kiến sẽ khuấy động khu vực phía Tây sau thời gian dài yên ắng.</p>#}
+                    {#                    <p>Đáng chú ý, trong khi giá thuê căn hộ dịch vụ trên thị trường giảm xuống còn 24 USD/m2/tháng thì trong vòng 5 năm trở lại đây, quận Cầu Giấy luôn duy trì mức giá thuê cao nhất, đạt 32 USD/m2/tháng trong 6 tháng đầu năm 2021. Khách#}
+                    {#                        thuê Hàn Quốc vượt qua Nhật Bản để chiếm đa số tại quận Cầu Giấy.</p>#}
+                </div>
+            </div>
+            <div class="col-md-4 titles">
+                <div class="tag-title">
+                    <h3>DANH MỤC BẢN TIN</h3>
+                    <ul>
+                        <li><span>1</span><a href="{% url 'news' %}">Các dự án nổi bật</a></li>
+                        <li><span>2</span><a href="{% url 'news' %}">Tin thị trường</a></li>
+                        <li><span>3</span><a href="{% url 'news' %}">Nhà độc đáo</a></li>
+                        <li><span>4</span><a href="{% url 'news' %}">Lựa chọn phong thuỷ</a></li>
+                    </ul>
+                    <div class="docthem">
+                        <h5>CÓ THỂ BẠN QUAN TÂM:</h5>
+                        <ul>
+                            {% for item in blog_list %}
+                                <li>
+                                    <img class="ig" src="{{ MEDIA_URL }}{{ item.imagenews__link }}">
+                                    <h6><a href="{% url 'news_detail' item.id %}">{{ item.title }}</a></h6>
+{#                                    <div class="tag bg-success">Đất</div>#}
+                                </li>
+                            {% endfor %}
+                            {#                            <li>#}
+                            {#                                <img class="ig" src="./asset/img/b1.png">#}
+                            {#                                <h6> <a href="#">Phía Tây Hà Nội đón nhiều nguồn cung mới trong nửa đầu năm 2021</a></h6>#}
+                            {#                                <div class="tag bg-success">Đất</div>#}
+                            {#                            </li>#}
+                            {#                            <li>#}
+                            {#                                <img class="ig" src="./asset/img/b2.png">#}
+                            {#                                <h6><a href="#">Phía Tây Hà Nội đón nhiều nguồn cung mới trong nửa đầu năm 2021</a></h6>#}
+                            {#                                <div class="tag bg-danger">Du lịch</div>#}
+                            {##}
+                            {#                            </li>#}
+                            {#                            <li>#}
+                            {#                                <img class="ig" src="./asset/img/b3.png">#}
+                            {#                                <h6><a href="#">Phía Tây Hà Nội đón nhiều nguồn cung mới trong nửa đầu năm 2021</a></h6>#}
+                            {#                                <div class="tag bg-primary">Thiết kế</div>#}
+                            {##}
+                            {#                            </li>#}
+                            {#                            <li>#}
+                            {#                                <img class="ig" src="./asset/img/b2.png">#}
+                            {#                                <h6><a href="#">Phía Tây Hà Nội đón nhiều nguồn cung mới trong nửa đầu năm 2021</a></h6>#}
+                            {#                                <div class="tag bg-warning">Nhà</div>#}
+                            {#                            </li>#}
+                            {#                            <li>#}
+                            {#                                <img class="ig" src="./asset/img/b4.png">#}
+                            {#                                <h6><a href="#">Phía Tây Hà Nội đón nhiều nguồn cung mới trong nửa đầu năm 2021</a></h6>#}
+                            {#                                <div class="tag bg-success">Đất</div>#}
+                            {##}
+                            {#                            </li>#}
+                            {#                            <li>#}
+                            {#                                <img class="ig" src="./asset/img/b1.png">#}
+                            {#                                <h6><a href="#">Phía Tây Hà Nội đón nhiều nguồn cung mới trong nửa đầu năm 2021</a></h6>#}
+                            {#                                <div class="tag bg-danger">Du lịch</div>#}
+                            {##}
+                            {#                            </li>#}
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block script %}{% endblock %}

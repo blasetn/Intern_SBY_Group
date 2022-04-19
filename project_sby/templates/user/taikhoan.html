@@ -1,0 +1,112 @@
+{% extends 'user/base.html' %}
+{% load static %}
+
+{% block title %}Bất động sản Cần Thơ{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/user/taikhoan.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <form action="{% url 'capnhattk' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="row gutters">
+                <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <div class="account-settings">
+                                <img src="{{ MEDIA_URL }}{{ user_detail.avatar }}" style="width: 210px;" height="400px"
+                                     alt="">
+                                <input type="file" name="image">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <div class="row gutters">
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                    <h6 class="mb-3 text-primary">Thông tin cá nhân</h6>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                    <div class="form-group">
+                                        <label for="fullName">Họ & Tên</label>
+                                        <input type="text" class="form-control" id="fullName" name="name"
+                                               placeholder="Nhập vào họ & tên" value="{{ user_detail.name }}">
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                    <div class="form-group">
+                                        <label for="phone">Giới tính</label>
+                                        <select class="form-control" name="sex">
+                                            <option {% if user_detail.sex == 0 %}selected{% endif %} value="0">
+                                                Nam
+                                            </option>
+                                            <option {% if user_detail.sex == 1 %}selected{% endif %} value="1">
+                                                Nữ
+                                            </option>
+                                            <option {% if user_detail.sex == 2 %}selected{% endif %} value="2">
+                                                Khác
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                    <div class="form-group">
+                                        <label for="website">Số điện thoại</label>
+                                        <input type="text" class="form-control" id="website" name="phone"
+                                               placeholder="Nhập vào số điện thoại" value="{{ user_detail.phone }}">
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                    <div class="form-group">
+                                        <label for="fullName">Email</label>
+                                        <input type="text" class="form-control" name="email"
+                                               placeholder="Nhập vào email" value="{{ request.user.email }}">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row gutters">
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                    <!-- <h6 class="mb-3 text-primary">Địa chỉ</h6> -->
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                    <div class="form-group">
+                                        <label for="Street">Địa chỉ</label>
+                                        <input type="text" class="form-control" id="Street" name="address"
+                                               placeholder="Nhập vào địa chỉ" value="{{ user_detail.address }}">
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                    <div class="form-group">
+                                        <label for="ciTy">Năm sinh</label>
+                                        <input type="date" class="form-control" name="birthday"
+                                               value="{{ user_detail.birthday|date:"Y-m-d" }}">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row gutters">
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                    <div class="text-right">
+                                        <button type="button" class="btn btn-secondary"
+                                                onclick="location.href='{% url 'taikhoan' %}'">Hủy
+                                        </button>
+                                        <button type="submit" id="submit" name="submit" class="btn btn-primary">Cập
+                                            nhật
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+
+{% endblock %}
+
+{% block script %}{% endblock %}

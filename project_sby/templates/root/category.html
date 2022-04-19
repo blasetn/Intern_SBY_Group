@@ -1,0 +1,100 @@
+{% extends 'root/base.html' %}
+
+{% block title %}Quản trị - Thêm danh mục{% endblock %}
+
+{% block content %}
+    <div class="main">
+        <div class="main-header">
+            <div class="mobile-toggle" id="mobile-toggle">
+                <i class='bx bx-menu-alt-left'></i>
+            </div>
+            <div class="main-title">
+                Thêm danh mục
+            </div>
+        </div>
+        <div class="main-content add_tindang">
+            <div class="row">
+                <div class="col-12">
+                    <div class="box" style="margin-top: 20px;">
+                        <div class="row">
+                            <div class="col-12 col-sm-6">
+                                <div class="box">
+                                    <div class="box-header" style="margin-bottom: 20px">
+                                        Thêm danh mục
+                                    </div>
+                                    <form action="{% url 'category_add' %}" method="post">
+                                        {% csrf_token %}
+                                        <div class="div_input_text">
+                                            <p>Tên danh mục:</p>
+                                            <input type="text" name="name" id="" class="input_text" required>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <div style="float: right;" class="button-action">
+                                                    <button type="reset">Nhập lại</button>
+                                                    <button type="submit" id="btn_ok">
+                                                        <!-- <span><i class='bx bx-check'></i></span> -->
+                                                        Xác nhận
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6">
+                                <div class="box">
+                                    <div class="box-header">
+                                        Danh mục đã có
+                                    </div>
+                                    <div class="box-body overflow-scroll">
+                                        <table style="min-width: auto">
+                                            <colgroup>
+                                                <col width="10%">
+                                                <col width="10%">
+                                                <col width="60%">
+                                                <col width="10%">
+                                                <col width="10%">
+                                            </colgroup>
+                                            <thead>
+                                            <tr>
+                                                <th><input type="checkbox"></th>
+                                                <th>ID</th>
+                                                <th>Tên</th>
+                                                <th></th>
+                                                <th></th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            {% for item in category_list %}
+                                                <tr>
+                                                    <td><input type="checkbox" value="{{ item.id }}"></td>
+                                                    <td>{{ item.id }}</td>
+                                                    <td>
+                                                        <div class="order-owner">
+                                                            <span>{{ item.name }}</span>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <a href="{% url 'category_update' item.id %}"
+                                                           style="font-size: 30px"><i
+                                                                class='bx bx-wrench'></i></a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="{% url 'category_delete' item.id %}" style="font-size: 30px"><i
+                                                                class='bx bx-trash'></i></a>
+                                                    </td>
+                                                </tr>
+                                            {% endfor %}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

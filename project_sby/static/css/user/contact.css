@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
+* {
+    font-family: 'Oswald', sans-serif;
+}
+.branch1 {
+        margin-bottom: 10px;
+        margin-top: 10px;
+}
+
+.branchs1 {
+    border-radius: 15px;
+    padding: 10px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;}
+.branchs2 {
+    border-radius: 15px;
+    padding: 10px; 
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+}
+.titles {
+    color: rgb(29, 56, 97);
+}
+.content1 {
+    height:373px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+    border-radius: 15px;
+    margin-top: 10px !important;
+}
+h2 {
+    background-color: rgb(11, 140, 184);
+    color: white;
+    padding:8px;
+    width: 50%;
+    margin-left: 26%;
+}
+img {
+    margin-bottom: 10px;
+
+}
+.form-group {
+    width: 500px;
+    margin-left: 100px;
+    margin-bottom: 0px !important;
+}
+.form-groupss {
+    width: 500px;
+    margin-left: 100px;
+    margin-top: 18px !important;
+}
+.form-groups {
+    width: 500px;
+    margin-left: 100px;
+}
+.form-controls {
+    height:40px;
+}
+button {
+margin-top: 10px !important;
+padding: 5px;
+background-color: rgb(11, 140, 184);
+border: none;
+border-radius: 10px;
+padding-left: 20px;
+padding-right: 20px;
+color: white;
+margin-left: 44% !important;
+font-size: 18px !important;
+}
+form {
+    margin-top: 10px !important;
+}
+@media (max-width: 767px)
+{
+    .form-groupss {
+        width: 500px;
+        margin-left: 50px;
+        margin-top: 0px !important;
+    }
+    .form-groups {
+        width: 500px;
+        margin-left: 50px;
+        margin-top: 0px !important;
+    }
+    .form-group {
+        width: 500px;
+        margin-left: 50px;
+        margin-top: 0px !important;
+    }
+}
+
+@media (max-width: 991px)
+{
+    .form-groupss {
+        width: 500px;
+        margin-left: 50px;
+        margin-top: 0px !important;
+    }
+    .form-groups {
+        width: 500px;
+        margin-left: 50px;
+        margin-top: 0px !important;
+    }
+    .form-group {
+        width: 500px;
+        margin-left: 50px;
+        margin-top: 0px !important;
+    }
+}

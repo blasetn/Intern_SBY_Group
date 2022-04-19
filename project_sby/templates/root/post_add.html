@@ -1,0 +1,122 @@
+{% extends 'root/base.html' %}
+
+{% block title %}Quản trị - Thêm bài đăng{% endblock %}
+
+{% block content %}
+<div class="main">
+        <div class="main-header">
+            <div class="mobile-toggle" id="mobile-toggle">
+                <i class='bx bx-menu-alt-left'></i>
+            </div>
+            <div class="main-title">
+                Thêm bài đăng đăng
+            </div>
+        </div>
+        <div class="main-content add_tindang">
+            <div class="row">
+                <div class="col-12">
+                    <form action="{% url 'post_add_process' %}" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="box">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="button-action">
+                                        <button type="menu" onclick="location.href='{% url 'post_list' %}'">
+                                            Hủy bỏ
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="col-sm-8">
+                                    <div style="float: right;" class="button-action">
+                                        <button type="reset">Nhập lại</button>
+                                        <button type="submit" id="btn_ok">
+                                            <!-- <span><i class='bx bx-check'></i></span> -->
+                                            Xác nhận
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box" style="margin-top: 20px;">
+                            <div class="row">
+                                <div class="col-12 col-sm-6">
+                                    <div class="div_input_text">
+                                        <p>Tiêu đề:</p>
+                                        <input type="text" name="title" id="" class="input_text" required>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <div class="div_input_text">
+                                        <p>Giá:</p>
+                                        <input type="text" name="prince" id="" class="input_text" required pattern="[0-9]+">
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <div class="div_input_text">
+                                        <p>Địa chỉ:</p>
+                                        <input type="text" name="address" id="" class="input_text" required>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <div class="div_input_text">
+                                        <p>Danh mục:</p>
+                                        <select style="color: rgba(0, 0, 0, 0.8);" name="category" id="" required>
+                                            <option disabled selected>Chọn phân loại</option>
+                                            {% for item in category_list %}
+                                                <option value="{{ item.id }}">{{ item.name }}</option>
+                                            {% endfor %}
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-sm-6 div_col_input_phanloai">
+                                    <div class="div_input_text">
+                                        <p>Phân loại:</p>
+                                        <div>
+                                            <input type="radio" value="0" class="input_radio" name="radiothueban"
+                                                id="radio-chothue" required>
+                                            <label for="radio-chothue">Cho thuê</label>
+                                        </div>
+                                        <div>
+                                            <input type="radio" value="1" class="input_radio" name="radiothueban"
+                                                   id="radio-ban">
+                                            <label for="radio-ban" required>Bán</label>
+                                        </div>
+                                    </div>
+                                </div>
+{#                                <div class="col-6 col-sm-6 div_col_input_noibat" style="justify-content: space-between;">#}
+{#                                    <div class="div_input_text">#}
+{#                                        <p>Nổi bật:</p>#}
+{#                                        <div>#}
+{#                                            <input type="radio" class="input_radio" name="radio-noibat"#}
+{#                                                id="radio-noibat-co" required>#}
+{#                                            <label for="radio-noibat-co">Có</label>#}
+{#                                        </div>#}
+{#                                        <div>#}
+{#                                            <input type="radio" class="input_radio" name="radio-noibat"#}
+{#                                                id="radio-noibat-khong" required>#}
+{#                                            <label for="radio-noibat-khong">Không</label>#}
+{#                                        </div>#}
+{#                                    </div>#}
+{#                                </div>#}
+                                <div class="col-6 col-sm-6 div_col_input_hinhanh">
+                                    <div class="div_input_text">
+                                        <p>Hình ảnh:</p>
+                                        <div>
+                                            <input type="file" name="image" class="input_image" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="div_input_text">
+                                        <p>Nội dung:</p>
+                                        <textarea name="description" id="" style="width: 100%; height: 400px;" required></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

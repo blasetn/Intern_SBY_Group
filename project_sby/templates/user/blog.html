@@ -1,0 +1,80 @@
+{% extends 'user/base.html' %}
+{% load static %}
+
+{% block title %}Bất động sản Cần Thơ{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/user/blog.css' %}">
+{% endblock %}
+
+{% block content %}
+    <section style="margin-bottom: 50px">
+        <!--Search-->
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-4 xsearch">
+                    <div class="input-group">
+                        <input type="search" class="form-control rounded" placeholder="Nhập tiêu đề tìm kiếm" aria-label="Search" aria-describedby="search-addon" />
+                        <button type="button" class="btn btn-outline-primary btnsearch">Tìm kiếm</button>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                </div>
+                <div class="col-md-4">
+
+                </div>
+            </div>
+        </div>
+        <!---->
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6 x1">
+                    <a href=""><img class="tieudiem" src="{% static 'img/home.png' %}"></a>
+                    <h3 class="text">Căn hộ cấp 4 tại quận 1 TP.HCM</h3>
+                    <h5 class="text1">Sở hữu với thiết kế hiện đại làm tôn lên vẻ sang trọng của ngôi nhà nhà nhà nhà nhà nhà nhà nhà</h5>
+                </div>
+                <div class="col-md-6 x2">
+                    <a href=""><img class="tieudiem1" src="{% static 'img/phone.png' %}"></a>
+                    <h3 class="text">Hướng dẫn sử dụng app mua bán nhà đất</h3>
+                    <h5 class="text1">Thiết kế dễ sử dụng, tiện lợi hơn trong bất động sản, cài đặt ngay để nhận các ưu đãi </h5>
+                </div>
+            </div>
+        </div>
+        <div id='nz-div'>
+            <h3 class="tde">
+                <span class="null">TIN TỨC</span>
+            </h3>
+        </div>
+        <div class="container-fluid mt-5">
+            <div class="row">
+                {% for item in blog_list %}
+                <div class="col-xl-2 col-lg-4 col-md-6">
+                    <div class="card">
+                        <div class="blog-image">
+                            <img class="avt" src="{{ MEDIA_URL }}{{ item.imagenews__link }}">
+{#                            <div class="date bg-warning">{{ item.date_created| }}</div>#}
+{#                            <div class="tag bg-warning">Nhà</div>#}
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-subtitle">{{ item.title }}</div>
+                            <p class="blog-desc">{{ item.content|slice:":100" }}</p>
+                            <button type="button" class="btn btn-info"
+                                    onclick="location.href='{% url 'news_detail' item.id%}'">Đọc Ngay</button>
+
+                            <div class="blog-footer">
+                                <div>
+                                    <i class="far fa-calendar-alt iconce"></i>
+                                    <span class="blog-author">{{ item.date_created }}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block script %}{% endblock %}
+<!DOCTYPE html>

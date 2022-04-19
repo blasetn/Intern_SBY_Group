@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
+* {
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px;
+}
+
+.tag {
+    position: absolute;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: 500;
+    color: #ffffff;
+    margin-left: 10px;
+    padding: 0px 15px;
+    margin-bottom: 85px;
+}
+.tag-content {
+    position: absolute;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: 500;
+    color: #ffffff;
+    margin-left: 10px;
+    padding: 0px 15px;
+    margin-bottom: 85px;
+}
+
+.blog-author {
+    font-size: 18px;
+    font-weight: 500;
+    color: darkgray;
+    padding: 0px;
+    margin: 0px;
+}
+
+.image {
+    width: 100%;
+    height: 400px;
+}
+
+.chuthich {
+    text-align: center;
+    font-size: 15px;
+}
+
+.titles {
+    display: flex;
+    justify-self: center;
+    /* align-items: center; */
+    /* min-height: 100vh; */
+    background: white;
+}
+
+.tag-title {
+    width: 400px;
+}
+
+.tag-title h3 {
+    color: #ffffff;
+    background: #018ccc;
+    padding: 10px 20px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    width: 400px;
+    /* margin-left: 40px; */
+}
+
+.tag-title ul {
+    position: relative;
+    background: #fff;
+    width: 400px;
+    right: 40px;
+}
+
+.tag-title ul li {
+    list-style: none;
+    padding: 10px;
+    width: 400px;
+    background: #fff;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, .1);
+    transition: transform 0.5s;
+    margin-right: 20px;
+}
+
+.tag-title ul li a {
+    color: black;
+    text-decoration: none;
+}
+
+.tag-title ul li:hover {
+    transform: scale(1.1);
+    z-index: 100;
+    background: #018ccc;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, .2);
+    color: #fff;
+}
+
+.tag-title ul li span {
+    width: 18px;
+    height: 18px;
+    text-align: center;
+    line-height: 15px;
+    background: #018ccc;
+    color: #fff;
+    display: inline-block;
+    border-radius: 50%;
+    margin-right: 10px;
+    font-size: 12px;
+    font-weight: 600;
+    transform: translateY(-2px);
+}
+
+.tag-title ul li:hover span {
+    background: #fff;
+    color: #018ccc;
+}
+
+.ig {
+    width: 70px;
+}
+
+.docthem ul {
+    margin-left: 35px;
+    padding: 0px;
+}
+
+.docthem ul li {
+    list-style: none;
+    clear: left;
+    height: 90px;
+    margin-bottom: 15px;
+}
+
+.docthem ul li .ig {
+    float: left;
+    margin-right: 10px;
+}
+@media (min-width: 767px)
+{
+    .tag-title ul {
+        position: relative;
+        background: #fff;
+        width: 320px;
+        right: 10px;
+    }
+    .tag-title ul li {
+        list-style: none;
+        padding: 10px;
+        width: 320px;
+        background: #fff;
+        box-shadow: 0 5px 25px rgb(0 0 0 / 10%);
+        transition: transform 0.5s;
+        margin-right: 20px;
+    }
+}
+@media (max-width: 991px)
+{
+    .tag-title ul {
+        position: relative;
+        background: #fff;
+        width: 0px;
+        right: 40px;
+    }
+    .tag-title h3 {
+        color: #ffffff;
+        background: #018ccc;
+        padding: 10px 20px;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        width: 220px;
+        margin-left: 0px;
+    }
+    .tag-title ul li {
+        list-style: none;
+        padding: 10px;
+        width: 220px;
+        background: #fff;
+        box-shadow: 0 5px 25px rgb(0 0 0 / 10%);
+        transition: transform 0.5s;
+        margin-right: 20px;
+    }
+    .tag {
+        position: absolute;
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 18px;
+        font-weight: 500;
+        color: #ffffff;
+        margin-top: -85px;
+        padding: 0px 15px;
+        margin-bottom: 85px;
+    }
+    .docthem ul li {
+        list-style: none;
+        clear: left;
+        height: 150px;
+        margin-bottom: 15px;
+    }
+}

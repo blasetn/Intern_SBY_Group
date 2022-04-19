@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
+*{
+    font-family: 'Oswald', sans-serif;
+    
+}
+.coltrai, .colphai{
+    color: white;
+    width: 100%;
+    height: 200px;
+}
+.col-md-6.coltrai {
+    
+    background-color: #00363d;
+}
+.coltrai h1.text-center {
+    position: relative;
+    top: 80px;
+    left: 0;
+}
+.col-md-6.colphai {
+
+    background-color: #77a300;
+}
+
+.colphai .tieude_timnhanh, .colphai .noidung_timnhanh {
+    position: relative;
+    text-align: center;
+    top: 80px;
+    left: 0;
+}
+p li {
+    text-align: justify;
+}

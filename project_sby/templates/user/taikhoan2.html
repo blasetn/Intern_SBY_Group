@@ -1,0 +1,136 @@
+{% extends 'user/base.html' %}
+{% load static %}
+
+{% block title %}Bất động sản Cần Thơ{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/user/taikhoan2.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row gutters">
+            <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <div class="account-settings">
+                            <img src="{{ MEDIA_URL }}{{ user_detail.avatar }}" style="width: 210px;" height="400px" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <div class="row gutters">
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                <h6 class="mb-3 text-primary">Thông tin cá nhân</h6>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                <div class="form-group">
+                                    <label for="fullName"><b>Họ & Tên</b></label>
+                                    <p>{{ user_detail.name }}</p>
+                                    <!-- <input type="text" class="form-control" id="fullName" placeholder="Nhập vào họ & tên"> -->
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                <div class="form-group">
+                                    <label for="eMail"><b>Email</b></label>
+                                    <p>{{ request.user.email }}</p>
+                                    <!-- <input type="email" class="form-control" id="eMail" placeholder="Nhập vào Email"> -->
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                <div class="form-group">
+                                    <label for="phone"><b>Giới tính</b></label>
+                                    <p>
+                                        {% if user_detail.sex == 0 %}
+                                            Nam
+                                        {% elif user_detail.sex == 1 %}
+                                            Nữ
+                                        {% else %}
+                                            Khác
+                                        {% endif %}
+                                    </p>
+                                    <!-- <input type="text" class="form-control" id="phone" placeholder="Nhập vào mật khẩu"> -->
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                <div class="form-group">
+                                    <label for="website"><b>Số điện thoại</b></label>
+                                    <p>{{ user_detail.phone }}</p>
+                                    <!-- <input type="url" class="form-control" id="website" placeholder="Nhập vào số điện thoại"> -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row gutters">
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                <!-- <h6 class="mb-3 text-primary">Địa chỉ</h6> -->
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                <div class="form-group">
+                                    <label for="Street"><b>Địa chỉ</b></label>
+                                    <p>{{ user_detail.address }}</p>
+                                    <!-- <input type="name" class="form-control" id="Street" placeholder="Nhập vào địa chỉ"> -->
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                <div class="form-group">
+                                    <label for="ciTy"><b>Ngày sinh</b></label>
+                                    <p>{{ user_detail.birthday|date:"d/m/Y" }}</p>
+                                    <!-- <input type="name" class="form-control" id="ciTy" placeholder="Nhập vào năm sinh"> -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row gutters">
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                <div class="text-right">
+                                    {#                                    <button type="button" id="submit" name="submit" class="btn btn-secondary">Hủy </button>#}
+                                    <button class="btn btn-primary" onclick="location.href='{% url 'capnhattk' %}'">Cập
+                                        nhật
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="card">
+            <div class="row">
+                <div class="col-4">
+                    <div class="card-image">
+                        <img src="anh2.jpg" alt="">
+                    </div>
+                </div>
+                <div class="col-8">
+                    <div class="card-content">
+                        <h4 class="blog-title">CĂN HỘ CAO CẤP</h4>
+                        <div class="blog-details">
+                            <div class="icon-text">
+                                <span class="text">13/06/2021</span>
+                            </div>
+                            <div class="icon-text">
+                                <span class="text">Giá</span>
+                            </div>
+                            <div class="icon-text">
+                                <span class="text">Diện tích</span>
+                            </div>
+                        </div>
+
+                        <p class="excerpt">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestiae
+                            voluptas totam quasi! Odio iste incidunt alias veniam impedit, laudantium corrupti
+                            suscipit? Ipsum nisi non molestiae nostrum atque sit! Dicta, repellat.</p>
+                        <div class="blog-cta">
+                            <a href="" class="button">Xem thêm</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block script %}{% endblock %}

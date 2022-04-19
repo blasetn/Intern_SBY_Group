@@ -1,0 +1,288 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=MonteCarlo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&family=MonteCarlo&display=swap');
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Oswald', sans-serif;
+}
+
+video {
+    width: 100%;
+    filter: brightness(70%);
+}
+
+.showcase {
+    position: absolute;
+    width: 100%;
+    min-height: 100vh;
+    padding: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #111;
+    color: #fff;
+    z-index: 2;
+}
+
+.showcase video {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.8;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.text {
+    position: absolute;
+    z-index: 10;
+    right: 35%;
+    font-weight: 700;
+    bottom: 60%;
+    bottom: 40%;
+}
+
+.text h1 {
+    font-size: 4em;
+    font-weight: 800;
+}
+
+.text h3 {
+    font-size: 2em;
+    font-weight: 600;
+}
+
+.text p {
+    font-size: 20px;
+}
+
+.text a {
+    display: inline-block;
+    font-size: 1em;
+    background: #fff;
+    padding: 10px 30px;
+    text-decoration: none;
+    color: black;
+    margin-top: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.text a:hover {
+    color: black;
+    text-transform: none;
+}
+
+.oo {
+    height: 725px;
+    background: #111;
+}
+
+.filter {
+    /* background: rgb(88, 135, 206); */
+    background: rgba(0, 0, 0, 0.5);
+    width: 500px !important;
+    position: relative;
+    z-index: 100;
+    font-weight: 700;
+    left: 54%;
+    position: absolute;
+    top: 70%;
+    padding: 20px;
+}
+
+.filter ul li a {
+    margin-right: 50px;
+    font-size: 20px;
+    text-decoration: none;
+    color: #fff;
+}
+
+input[type=text] {
+    border: 2px solid #fff;
+    margin: 10px;
+}
+
+.filter ul li {
+    width: 280px;
+    float: left;
+}
+
+.dropdown {
+    float: left;
+    margin-right: 5px;
+    padding: 6px;
+}
+
+#timkiem {
+    display: inline-block;
+    font-size: 1em;
+    background: #fff;
+    padding: 5px 15px;
+    text-decoration: none;
+    color: black;
+    margin-top: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-left: 180px;
+}
+
+.nav-tabs {
+    float: left;
+}
+
+.aa {
+    height: 720px;
+}
+
+.tttchi {
+    margin-top: 540px;
+    margin-bottom: 45px;
+}
+
+.tchi {
+    width: 100px;
+    margin-left: 100px;
+}
+
+.tentchi {
+    text-align: center;
+    margin-top: 15px;
+    color: rgb(25, 43, 65);
+}
+
+.images {
+    width: 100%;
+}
+
+.mbdd {
+    background: rgb(237, 240, 243);
+}
+
+.ckxt {
+    background: rgb(237, 240, 243);
+}
+
+.tc1,
+.tc2 {
+    padding: 30px;
+}
+
+.nd1 {
+    font-size: 22px;
+    text-align: justify;
+    font-weight: 200;
+}
+
+.nd2 {
+    font-size: 22px;
+    text-align: justify;
+    font-weight: 200;
+    margin-top: 20px;
+}
+
+#ndtieuchi {
+    list-style: none;
+    font-size: 20px;
+}
+
+#ndtieuchi li {
+    margin-bottom: 10px;
+}
+
+.v {
+    color: rgb(51, 90, 141);
+    margin-right: 10px;
+    font-size: 30px !important;
+    font-weight: 800 !important;
+}
+
+.muc {
+    font-weight: 900;
+    color: rgb(51, 90, 141);
+}
+
+#btntc2 {
+    display: inline-block;
+    font-size: 18px;
+    background: rgb(51, 90, 141);
+    padding: 8px 18px;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    margin-top: 5px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-left: 180px;
+}
+
+#btntc2:hover {
+    background: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+}
+
+.img-text {
+    width: 100%;
+    height: 300px;
+    display: block;
+    text-align: center;
+    padding: 40% 5%;
+    background: rgb(72, 100, 153);
+    color: #fff;
+    border-radius: 15px;
+}
+
+.img-text h2 {
+    font-size: 25px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 25px;
+}
+
+.img-text p {
+    font-size: 18px;
+}
+
+.single-box {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.img-area {
+    position: absolute;
+    width: 130px;
+    height: 130px;
+    border: 5px solid #fff;
+    overflow: hidden;
+    top: 15px;
+    left: 110px;
+    border-radius: 50%;
+}
+
+.feedback {
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 15px;
+    font-family: 'MonteCarlo', cursive;
+}
+
+.fb {
+    background: rgb(237, 240, 243);
+    border-radius: 15px;
+    padding: 25px;
+}
+
+.size {
+    width: 130px;
+    height: 130px;
+}

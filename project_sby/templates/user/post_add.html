@@ -1,0 +1,472 @@
+{% extends 'user/base.html' %}
+{% load static %}
+
+{% block title %}Bất động sản Cần Thơ{% endblock %}
+
+{% block head %}
+    {#    <link rel="stylesheet" href="{% static 'css/root/style.css' %}">#}
+{% endblock %}
+
+{% block content %}
+    <style>
+        :root {
+            --body-bg: #fff;
+            --box-bg: #ffffff;
+            --main-color: #015ea7;
+            --text-color: #455560;
+            --text-second-color: #72849ab3;
+            --border-color: #e9e9e9;
+            --menu-item-active-bg: rgba(62, 121, 247, 0.1);
+
+            --box-border-radius: 15px;
+            --sidebar-size: 300px;
+            --sidebar-logo-img-size: 60px;
+            --sidebar-logo-size: 80px;
+            --profile-image-size: 45px;
+            --main-header-height: 80px;
+            --shadow: 0 1px 4px -1px rgb(0 0 0 / 15%);
+            --darkmode-toggle-size: 20px;
+        }
+
+        .main-title {
+            text-transform: capitalize;
+            font-size: 1.5rem;
+        }
+
+        .main-content {
+            padding: 20px;
+        }
+
+        .box {
+            background-color: var(--box-bg);
+            padding: 20px;
+            border: 0.5px solid var(--border-color);
+            border-radius: var(--box-border-radius);
+        }
+
+        .box-hover:hover {
+            border-color: var(--main-color);
+        }
+
+        .box-col {
+            background-color: var(--box-bg);
+            border: 0.5px solid var(--border-color);
+            border-radius: var(--box-border-radius);
+        }
+
+        .counter-title {
+            margin-left: 20px;
+            text-transform: capitalize;
+        }
+
+        .counter-info {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 2rem;
+            font-weight: 700;
+            padding: 0 20px;
+        }
+
+        .counter-info i {
+            color: var(--main-color);
+        }
+
+        .col-bot {
+            margin-bottom: 20px;
+        }
+
+        /* =============================================== */
+        .box-header {
+            text-transform: capitalize;
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+
+        .box-body {
+            padding: 20px 0;
+        }
+
+        .product-list {
+            list-style-type: none;
+        }
+
+        .product-list-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 0;
+        }
+
+        .item-info {
+            display: flex;
+            align-items: center;
+        }
+
+        .item-info img {
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+            margin-right: 10px;
+        }
+
+        .product-name,
+        .product-sales {
+            font-weight: 600;
+            text-transform: capitalize;
+        }
+
+        .product-name {
+            margin-bottom: 5px;
+        }
+
+        .product-sales {
+            margin-top: 5px;
+        }
+
+        .text-second {
+            color: var(--text-second-color);
+        }
+
+        .item-sale-info {
+            text-align: right;
+        }
+
+        .f-height {
+            height: 100%;
+        }
+
+        table {
+            width: 100%;
+            min-width: 1000px;
+        }
+
+        .order-owner {
+            display: flex;
+            align-items: center;
+            text-transform: capitalize;
+            font-weight: 500;
+        }
+
+        .order-owner img {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+
+        table thead tr {
+            text-align: left;
+        }
+
+        table th,
+        table td {
+            padding: 20px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .order-status {
+            padding: 5px 15px;
+            border-radius: 5px;
+            font-weight: 500;
+        }
+
+        .order-ready {
+            color: #2a59d1;
+            background-color: rgba(62, 121, 247, 0.1);
+        }
+
+        .order-shipped {
+            color: #00ab6f;
+            background-color: rgba(4, 209, 130, 0.1);
+        }
+
+        .payment-status {
+            display: flex;
+            align-items: center;
+        }
+
+        .payment-status .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .payment-paid .dot {
+            background-color: #04d182;
+        }
+
+        .payment-pending .dot {
+            background-color: #ffc542;
+        }
+
+        .overflow-scroll {
+            overflow-y: auto;
+        }
+
+        .overlay {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: none;
+        }
+
+        .overlay.active {
+            display: block;
+        }
+
+        @media only screen and (max-width: 1280px) {
+            .sidebar {
+                transition: transform 0.3s ease-in-out;
+                max-width: 100%;
+                z-index: 99;
+                transform: translateX(-100%);
+            }
+
+            .sidebar.active {
+                transform: translateX(0);
+            }
+
+            .main {
+                padding-left: 0;
+            }
+
+            .mobile-toggle,
+            .sidebar-close {
+                display: grid;
+                place-items: center;
+                font-size: 2rem;
+                margin-right: 30px;
+                cursor: pointer;
+            }
+
+            .sidebar-close {
+                position: absolute;
+                right: -15px;
+            }
+        }
+
+        @media only screen and (max-width: 576px) {
+            .button-action-list {
+                margin-bottom: 20px;
+            }
+
+            .button-action-list button {
+                margin: 0 !important;
+            }
+        }
+
+        .add_tindang input,
+        .add_tindang textarea,
+        .add_tindang select {
+            font-size: 1.1rem;
+        }
+
+        .add_tindang .input_text,
+        .add_tindang select,
+        .add_tindang textarea {
+            width: 100%;
+            padding: 10px 15px;
+            margin: 10px 0px;
+            border: 2px solid rgb(0 0 0 / 30%);
+            border-radius: 5px;
+            outline-color: var(--main-color);
+        }
+
+        .add_tindang .div_input_text {
+            /* padding: 5px 15px; */
+            height: 100%;
+        }
+
+        .add_tindang label {
+            font-size: 1.2rem;
+        }
+
+        .add_tindang .input_radio {
+            margin-right: 15px;
+            margin-left: 15px;
+        }
+
+        .add_tindang input[type="radio"] {
+            transform: scale(1.5);
+        }
+
+        .add_tindang p {
+            font-size: 1.2rem;
+            color: rgb(0 0 0 / 70%);
+            font-weight: 600;
+        }
+
+        .button-action button {
+            font-size: 1.2rem;
+            font-weight: 600;
+            padding: 7px 15px;
+            border-radius: 5px;
+            margin: 10px;
+            background-color: white;
+            color: rgb(0 0 0 / 80%);
+            border: 2px solid rgb(0 0 0 / 80%);
+        }
+
+        /* .button-action span{
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-right: 5px;
+            vertical-align: middle;
+        } */
+        .button-action button:hover {
+            background-color: black;
+            border-color: black;
+            color: white;
+            border-style: solid;
+        }
+
+        .button-action #btn_ok {
+            background-color: #015ea7;
+            border-color: #015ea7;
+            color: white;
+            border-style: solid;
+        }
+
+        .button-action #btn_ok:hover {
+            background-color: white;
+            color: #015ea7;
+        }
+
+        .div_col_input_hinhanh .div_input_text .input_image {
+            padding: 10px 0;
+        }
+
+        @media only screen and (max-width: 575px) {
+            .button-action {
+                float: none !important;
+            }
+
+            .button-action button {
+                width: 100%;
+            }
+
+            .div_col_input_phanloai {
+                padding-right: 0px;
+            }
+
+            .add_tindang .input_radio {
+                margin-right: 5px;
+                margin-left: 5px;
+            }
+
+            .button-action button {
+                margin: 10px 0;
+            }
+        }
+    </style>
+    <div class="container">
+        <div class="main-header">
+            <div class="mobile-toggle" id="mobile-toggle">
+                <i class='bx bx-menu-alt-left'></i>
+            </div>
+            <div class="main-title" style="margin-left: 20px; margin-top: 20px">
+                Thêm bài đăng đăng
+            </div>
+        </div>
+        <div class="main-content add_tindang">
+            <div class="row">
+                <div class="col-12">
+                    <form action="{% url 'addsp' %}" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="box">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="button-action">
+                                        <button type="menu" onclick="location.href='{% url 'home' %}'">
+                                            Hủy bỏ
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="col-sm-8">
+                                    <div style="float: right;" class="button-action">
+                                        <button type="reset">Nhập lại</button>
+                                        <button type="submit" id="btn_ok">
+                                            <!-- <span><i class='bx bx-check'></i></span> -->
+                                            Xác nhận
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box" style="margin-top: 20px;">
+                            <div class="row">
+                                <div class="col-12 col-sm-6">
+                                    <div class="div_input_text">
+                                        <p>Tiêu đề:</p>
+                                        <input type="text" name="title" id="" class="input_text" required>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <div class="div_input_text">
+                                        <p>Giá:</p>
+                                        <input type="text" name="prince" id="" class="input_text" required
+                                               pattern="[0-9]+">
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <div class="div_input_text">
+                                        <p>Địa chỉ:</p>
+                                        <input type="text" name="address" id="" class="input_text" required>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <div class="div_input_text">
+                                        <p>Danh mục:</p>
+                                        <select style="color: rgba(0, 0, 0, 0.8);" name="category" id="" required>
+                                            <option disabled selected value="">Chọn phân loại</option>
+                                            {% for item in category_list %}
+                                                <option value="{{ item.id }}">{{ item.name }}</option>
+                                            {% endfor %}
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-sm-6 div_col_input_phanloai">
+                                    <div class="div_input_text">
+                                        <p>Phân loại:</p>
+                                        <div>
+                                            <input type="radio" value="0" class="input_radio" name="radiothueban"
+                                                   id="radio-chothue" required>
+                                            <label for="radio-chothue">Cho thuê</label>
+                                        </div>
+                                        <div>
+                                            <input type="radio" value="1" class="input_radio" name="radiothueban"
+                                                   id="radio-ban">
+                                            <label for="radio-ban" required>Bán</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-sm-6 div_col_input_hinhanh">
+                                    <div class="div_input_text">
+                                        <p>Hình ảnh:</p>
+                                        <div>
+                                            <input type="file" name="image" class="input_image" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="div_input_text">
+                                        <p>Nội dung:</p>
+                                        <textarea name="description" id="" style="width: 100%; height: 400px;"
+                                                  required></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block script %}{% endblock %}

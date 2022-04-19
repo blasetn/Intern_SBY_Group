@@ -1,0 +1,241 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
+* {
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px;
+}
+
+.blog-image {
+    position: relative;
+}
+
+.blog-image img {
+    width: 100%;
+}
+
+.date {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    top: 3%;
+    right: 3%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #ffffff;
+    font-size: 17px;
+    line-height: 1;
+    font-weight: 500;
+}
+
+.tag {
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 0 15px;
+    color: #ffffff;
+}
+
+.blog-content {
+    padding: 25px 15px;
+}
+
+.blog-subtitle {
+    font-weight: 400;
+    color: #ff003b;
+    margin-bottom: 16px;
+}
+
+.blog-desc {
+    font-size: 14px;
+}
+
+.blog-desc a {
+    text-decoration: none;
+    color: #ff003b;
+    font-weight: 500;
+}
+
+.blog-footer {
+    display: flex;
+    align-items: center;
+}
+
+.blog-author {
+    font-size: 12px;
+    font-weight: 500;
+    color: darkgray;
+    padding: 0px;
+    margin: 0px;
+}
+
+.blog-avatar {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: block;
+    overflow: hidden;
+    margin-right: 20px;
+}
+
+.blog-avatar img {
+    width: 100%;
+}
+
+.blog-comment {
+    margin-left: 10px;
+}
+
+.blog-footer .btn {
+    margin-left: auto;
+}
+
+.avt {
+    height: 170px;
+}
+
+.iconce {
+    color: darkgray
+}
+
+.paginations {
+    margin-left: 430px;
+    margin-top: 20px;
+}
+
+.page-link {
+    position: relative;
+    display: block;
+    padding: .5rem .75rem;
+    margin-left: -1px;
+    line-height: 1.25;
+    color: white !important;
+    background-color: rgb(59, 164, 196) !important;
+    border: 1px solid #dee2e6;
+}
+
+.page-link:hover {
+    background: white !important;
+    color: black !important;
+}
+
+
+/* //////// */
+
+#nz-div {
+    border-bottom: 2px solid rgb(104, 103, 103);
+    margin-bottom: 20px;
+    display: block;
+    padding-top: 10px;
+}
+
+#nz-div h3.tde {
+    margin: 0;
+    font-size: 16px;
+    line-height: 20px;
+    display: inline-block;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+#nz-div h3.tde :after {
+    content: "";
+    width: 0;
+    height: 0;
+    border-top: 40px solid transparent;
+    border-left: 20px solid rgb(104, 103, 103);
+    border-bottom: 0px solid transparent;
+    border-right: 0 solid transparent;
+    position: absolute;
+    top: 0px;
+    right: -20px;
+}
+
+#nz-div h3.tde span {
+    background: rgb(104, 103, 103);
+    padding: 10px 20px 8px 20px;
+    color: white;
+    position: relative;
+    display: inline-block;
+    margin: 0;
+}
+
+.text {
+    color: #fff;
+    position: absolute;
+    top: 270px;
+}
+
+.text1 {
+    color: #fff;
+    position: absolute;
+    top: 310px;
+    width: 550px;
+}
+
+.tieudiem {
+    width: 100%;
+}
+
+.tieudiem1 {
+    width: 99%;
+}
+
+.xsearch {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.btnsearch {
+    background-color: rgb(73, 177, 224) !important;
+    color: white !important;
+    border: 1px solid rgb(73, 177, 224) !important;
+    border-radius: 0px !important;
+}
+
+.rounded {
+    border-radius: 0px !important;
+}
+@media (max-width: 767px)
+{
+    .page-item:first-child .page-link {
+        border-top-left-radius: .25rem;
+        border-bottom-left-radius: .25rem;
+    }
+   
+}
+#nz-div {
+    border-bottom: 2px solid rgb(104, 103, 103);
+    margin-bottom: 0px;
+    display: block;
+    padding-top: 10px;
+}
+.paginations {
+     margin-left: 0px; 
+    margin-top: 20px;
+}
+
+@media (max-width: 991px)
+{
+    .page-item:first-child .page-link {
+        border-top-left-radius: .25rem;
+        border-bottom-left-radius: .25rem;
+    }
+    #nz-div {
+        border-bottom: 2px solid rgb(104, 103, 103);
+        margin-bottom: 0px;
+        display: block;
+        padding-top: 10px;
+    }
+    .paginations {
+        margin-left: 0px;
+        margin-top: 20px;
+    }
+    .text1 {
+    display: none;
+}
+}
+

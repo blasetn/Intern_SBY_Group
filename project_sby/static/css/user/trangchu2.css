@@ -1,0 +1,14 @@
+.container-center{
+    text-align: center;
+}
+hr{
+    text-align: center;
+}
+.icon{
+   font-size: 3rem;
+   color: #397bff;
+}
+.img-partner{
+    height: 3rem;
+    margin: 25px !important;
+}

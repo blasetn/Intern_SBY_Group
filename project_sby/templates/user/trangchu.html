@@ -1,0 +1,369 @@
+{% extends 'user/base.html' %}
+{% load static %}
+
+{% block title %}Bất động sản Cần Thơ{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/user/trangchu.css' %}">
+    <link rel="stylesheet" href="{% static 'css/user/trangchu2.css' %}">
+{% endblock %}
+
+{% block content %}
+    <section>
+        <div class="showcase">
+            <video src="{% static 'img/vioo.mp4' %}" muted loop autoplay></video>
+            <div class="overplay"></div>
+            <div class="text ">
+                <h1>BẤT ĐỘNG SẢN CẦN THƠ</h1>
+                <h3>LỰA CHỌN CĂN NHÀ ƯNG Ý CHO BẠN</h3>
+                <p>Được thành lập đầu năm 2020 tại thành phố cần thơ với độ uy tín tuyệt đối.An tâm với 100% bất động
+                    sản xác thực</p>
+                <p>Gần 90% chủ nhà chốt giao dịch trong vòng 90 ngày sau khi chọn BĐS Càn Thơ</p>
+                <p>An tâm với 100% bất động sản xác thực</p>
+                <a href="{% url 'sp' %}">Khám phá ngay</a>
+            </div>
+        </div>
+        <!-- <div class="container-fluid oo">
+        </div> -->
+        <div class="container-fluid">
+            <div class="filter">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a data-toggle="tab" href="#home">NHÀ ĐẤT BÁN</a></li>
+                    <li id="right"><a data-toggle="tab" href="#menu1">NHÀ ĐẤT CHO THUÊ</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div id="home" class="tab-pane fade in active">
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Loại hình
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                        </div>
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Trên toàn quốc
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                        </div>
+
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Mức giá
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                        </div>
+
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Diện tích
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div id="menu1" class="tab-pane fade">
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Loại hình
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                        </div>
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Trên toàn quốc
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                        </div>
+
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Mức giá
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                        </div>
+
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Diện tích
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                        </div>
+                    </div>
+                    <a id="timkiem" href="#">Tìm kiếm</a>
+
+                </div>
+
+            </div>
+        </div>
+        <div class="container-fluid aa"></div>
+        <div class="container-fluid tttchi">
+            <div class="row">
+                <div class="col-md-3">
+                    <img class="tchi" src="{% static 'img/a1.png' %}">
+                    <h3 class="tentchi">Mua bán dễ dàng</h3>
+                </div>
+                <div class="col-md-3">
+                    <img class="tchi" src="{% static 'img/a2.png' %}">
+                    <h3 class="tentchi">Dẫn đầu số lượng</h3>
+                </div>
+                <div class="col-md-3">
+                    <img class="tchi" src="{% static 'img/a3.png' %}">
+
+                    <h3 class="tentchi">Cam kết xác thực</h3>
+                </div>
+                <div class="col-md-3">
+                    <img class="tchi" src="{% static 'img/a4.png' %}">
+
+                    <h3 class="tentchi">Tiết kiệm chi phí</h3>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid mbdd">
+            <div class="row tc1">
+                <div class="col-md-6 noidung">
+                    <h2 class="muc">MUA BÁN DỄ DÀNG</h2>
+                    <p class="nd1"> Bất động sản Cần Thơ mang đến nhiều tính năng ưu việt, tạo nên sân chơi mua bán bất
+                        động sản đa dạng, chuyên nghiệp tập trung vào các dự án khu dân cư và khu đô thị mới
+                    </p>
+                    <ul id="ndtieuchi">
+                        <li><i class="far fa-check-circle v"></i>Duyệt bài nhanh chóng</li>
+                        <li><i class="far fa-check-circle v"></i>Nền tảng trực tuyến dễ sử dụng</li>
+                        <li><i class="far fa-check-circle v"></i>Kết nối an toàn</li>
+                        <li><i class="far fa-check-circle v"></i>Chi phí đăng tin thấp</li>
+                        <li><i class="far fa-check-circle v"></i>Giao diện đơn giản, thân thiện</li>
+                    </ul>
+                </div>
+                <div class="col-md-6 hinhanh">
+                    <img class="images" src="{% static 'img/a11.png' %}">
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid ddsl">
+            <div class="row tc2">
+                <div class="col-md-6 hinhanh">
+                    <img class="images" src="{% static 'img/aa2.png' %}">
+                </div>
+                <div class="col-md-6 noidung">
+                    <h2 class="muc">DẪN ĐẦU SỐ LƯỢNG</h2>
+                    <p class="nd2">Trong quá trình hoạt động đến nay, Bất động sản Cần Thơ đã tham gia phân phối hơn 500
+                        dự án, đầu tư khoảng 10 dự án và tư vấn cho thuê hơn 100 sản phẩm. Chúng tôi tự hào đã giúp hơn
+                        200.000 khách hàng lựa chọn được các sản phẩm bất
+                        động sản ưng ý, bao gồm các căn hộ cao cấp, biệt thự và nhà liền kề, chung cư, văn phòng, mặt
+                        bằng thương mại, nhà phố, bất động sản nghỉ dưỡng..</p>
+                    <a id="btntc2" href="{% url 'sp' %}">Mua bán với BĐSCT</a>
+
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid ckxt">
+            <div class="row tc1">
+                <div class="col-md-6 noidung">
+                    <h2 class="muc">CAM KẾT XÁC THỰC</h2>
+                    <p class="nd1"> Thấu hiểu được về tính minh bạch, BĐS Cần thơ cho ra 4 tiêu chí:
+                    </p>
+                    <ul id="ndtieuchi">
+                        <li><i class="far fa-check-circle v"></i>Hình ảnh thực tế</li>
+                        <li><i class="far fa-check-circle v"></i>Uy tín an toàn</li>
+                        <li><i class="far fa-check-circle v"></i>Giá đúng thị trường</li>
+                        <li><i class="far fa-check-circle v"></i>Thông tin pháp lí đầy đủ</li>
+                        <p class="nd1">Từ đây, bạn đã có thể đặt trọn niềm tin. Việc của bạn lả tìm kiếm nhà theo nhu
+                            cầu, trải nghiệm dịch vụ tư vấn của chúng tôi. Thời gian tìm kiếm ngôi nhà ưng ý của bạn
+                            hoàn toàn được rút ngắn.</p>
+                    </ul>
+                </div>
+                <div class="col-md-6 hinhanh">
+                    <img class="images" src="{% static 'img/a33.png' %}">
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid ddsl">
+            <div class="row tc2">
+                <div class="col-md-6 hinhanh">
+                    <img class="images" src="{% static 'img/aa4.png' %}">
+                </div>
+                <div class="col-md-6 noidung">
+                    <h2 class="muc">TIẾT KIỆM CHI PHÍ</h2>
+                    <p class="nd2">Hiểu được vấn đề của nhà đầu tư, Bất động sản Cần Thơ hỗ trợ tối đa về các hoạt động
+                        phát sinh chi phí với hình thức đăng bài duyệt nhanh giá rẻ. Khách hàng là yếu tố quan trọng tạo
+                        nên sự phát triển của chúng tôi. Mọi nỗ lực của chúng
+                        tôi từ ngày thành lập đến suốt quãng đường phát triển đến nay cũng chỉ vì 4 chữ “hài lòng khách
+                        hàng”. Có thêm được 1 khách hàng hài lòng, là chúng tôi đã có thêm 1 tài sản vô giá. </p>
+                    <a id="btntc2" href="{% url 'sp' %}">Mua bán với BĐSCT</a>
+
+                </div>
+            </div>
+        </div>
+        <div class="container fb">
+            <h1 class="feedback">Đánh giá từ khách hàng</h1>
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="single-box">
+                                            <div class="img-area">
+                                                <img class="size" src="{% static 'img/avt1.png' %}">
+                                            </div>
+                                            <div class="img-text">
+                                                <h2>Nguyễn Văn A</h2>
+                                                <p><i>"Tôi thực sự hài lòng với cách làm việc của BĐS Cần Thơ, tôi rất
+                                                    ăn ý với căn nhà mình đã chọn"</i></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="single-box">
+                                            <div class="img-area">
+                                                <img class="size" src="{% static 'img/avt2.png' %}">
+                                            </div>
+                                            <div class="img-text">
+                                                <h2>Trần thị B</h2>
+                                                <p><i>"Tôi được hỗ trợ rất nhiều từ bất động sản cần thơ, nhờ vậy tôi đã
+                                                    mua được căn hộ cho gia đình mình"</i></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="single-box">
+                                            <div class="img-area">
+                                                <img class="size" src="{% static 'img/avt3.png' %}">
+                                            </div>
+                                            <div class="img-text">
+                                                <h2>Võ Văn C</h2>
+                                                <p><i>"Những thông tin trên đây có tính minh bạch rất cao, tôi rất yên
+                                                    tâm khi sử dụng đến dịch vụ này"</i></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="py-5">
+            <div class="container container-center">
+                <h4>
+                    Lý do lựa chọn
+                </h4>
+                <hr class="text-center">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <i class="fas fa-dollar-sign my-3 icon"></i>
+                        <h5>Nền tảng</h5>
+                        <p>
+                            Cung cấp dịch vụ đăng tin mua bán<br> bất động sản với nền tảng trực qaun trên bản đồ.
+                        </p>
+                    </div>
+                    <div class="col-lg-4">
+                        <i class="fas fa-thumbs-up my-3 icon"></i>
+                        <h5>Hỗ trợ</h5>
+                        <p>
+                            Luôn luôn hỗ trợ bạn khi cần thiết<br> và cung cấp dịch vụ đáng tin cậy
+                        </p>
+                    </div>
+                    <div class="col-lg-4">
+                        <i class="fas fa-smog my-3 icon"></i>
+                        <h5>Miễn phí</h5>
+                        <p>
+                            Miễn phí và sẽ luôn như vậy<br> bạn thành công chúng tôi cũng thành công.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class=" py-5">
+            <div class="container  container-center">
+                <h4>
+                    Tác động xã hội
+                </h4>
+                <hr>
+                <div class="row">
+                    <div class="col-lg-4">
+                        <i class="fas fa-clipboard-check my-3 icon"></i>
+                        <h5>Mua bán</h5>
+                        <p>
+                            Mua bán dễ dàng - thành công
+                        </p>
+                    </div>
+                    <div class="col-lg-4">
+                        <i class="fas fa-car-side my-3 icon"></i>
+                        <h5>Môi trường</h5>
+                        <p>
+                            CO<sub>2</sub> giảm thải môi trường
+                        </p>
+                    </div>
+                    <div class="col-lg-4">
+                        <i class="fas fa-hand-holding-usd my-3 icon"></i>
+                        <h5>Tiết kiệm</h5>
+                        <p>
+                            Tiết kiệm cho đối tác và khách hàng
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bg-white py-5">
+            <div class="container text-center">
+                <h4>
+                    Đối tác tin cậy
+                </h4>
+                <hr class="">
+                <img class=" img-partner" src="{% static 'img/logo-group.png' %}" alt="">
+                <img class=" img-partner" src="{% static 'img/logo-land.png' %}" alt="">
+                <img class=" img-partner" src="{% static 'img/logo-land.png' %}" alt="">
+                <img class=" img-partner" src="{% static 'img/logo-land.png' %}" alt="">
+                <img class=" img-partner" src="{% static 'img/logo-land.png' %}" alt="">
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block script %}{% endblock %}

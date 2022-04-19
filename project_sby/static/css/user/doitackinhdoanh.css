@@ -1,0 +1,16 @@
+.block-title{
+    text-align: center;
+}
+.content-benefit{
+
+   display: flex; 
+   align-items: center;
+}
+.img-benefit {
+    max-width: 100%; 
+     height: auto;
+   width: 100%;
+}
+.hr-small{
+    text-align: center;
+}

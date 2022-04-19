@@ -1,0 +1,76 @@
+{% extends 'user/base.html' %}
+{% load static %}
+
+{% block title %}Bất động sản Cần Thơ{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/user/contact.css' %}">
+{% endblock %}
+
+{% block content %}
+    <section style="margin-bottom: 40px">
+        <div class="container-fluid">
+            <div style="margin-bottom: 40px">
+                <img src="{% static 'img/contact.png' %}" style="width: 100%" ;>
+            </div>
+
+            <div class="row" style="">
+                <div class="col-md-6 col-12 col-xs-12 form">
+                    <h2 class="h22 text-center">LIÊN HỆ NGAY VỚI CHÚNG TÔI!</h2>
+                    <div class="content1">
+                        <form action="{% url 'contact' %}" method="post">
+                            {% csrf_token %}
+                            <div class="form-groupss col-8 col-center">
+                                <label for="exampleInputEmail1">Họ và tên</label>
+                                <input type="text" class="form-control" aria-describedby="nameHel3p"
+                                    placeholder="Nhập họ và tên" name="name" required>
+                            </div>
+                            <div class="form-group col-8">
+                                <label for="exampleInputEmail1">Email</label>
+                                <input type="email" class="form-control" aria-describedby="emailHelp"
+                                    placeholder="Nhập địa chỉ Email" name="email" required>
+                            </div>
+                            <div class="form-group col-8">
+                                <label for="exampleInputEmail1">Tiêu đề</label>
+                                <input type="text" class="form-control" aria-describedby="nameHelp"
+                                    placeholder="Nhập tiêu đề bài gửi" name="title" required>
+                            </div>
+                            <div class="form-groups col-8">
+                                <label for="exampleInputEmail1">Nội dung</label>
+                                <textarea  class="form-control" placeholder="Nhập nội dung cần gửi"
+                                name="content" required></textarea>
+                            </div>
+                            <button type="submit">Gửi</button>
+                        </form>
+                    </div>
+
+                </div>
+                <div class="col-md-6 col-sm-12 col-xs-12 info">
+                    <h2 class="text-center">THÔNG TIN LIÊN HỆ</h2>
+                    <div class="content2">
+                        <div class="row">
+                            <div class="col-md-12 text-center branch1">
+                                <div class="branchs1">
+                                    <h3 class="titles">CHI NHÁNH 1</h3>
+                                    <p> 69 Mậu Thân, Ninh Kiều, Cần Thơ</p>
+                                    <p>0888888888</p>
+                                    <p>Sbychinhanh1@gmail.com</p>
+                                </div>
+                            </div>
+                            <div class="col-md-12 text-center branch2">
+                                <div class="branchs2">
+                                    <h3 class="titles">CHI NHÁNH 2</h3>
+                                    <p> 12/5 Trần Phú, Ninh Kiều, Cần Thơ</p>
+                                    <p>0888888888</p>
+                                    <p>Sbychinhanh2@gmail.com</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block script %}{% endblock %}

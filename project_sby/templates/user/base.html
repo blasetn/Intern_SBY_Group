@@ -1,0 +1,166 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link href="{% static 'img/logo-icon.png' %}" rel="shortcut icon"/>
+    <link rel="stylesheet" href="{% static 'lib/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+          integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/user/navbar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/user/footer.css' %}">
+    {% block head %}{% endblock %}
+</head>
+
+<body>
+<header>
+    <div class="container">
+        <nav>
+            <div class="nav-border-bot row">
+                <div class="col">
+                    <a href="{% url 'home' %}" id="logo-responsive" style="display: none;"><img
+                            src="{% static 'img/logo1.png' %}" style="width: 150px;" alt=""></a>
+                </div>
+                <div class="col">
+                    <label style="float: right; font-size: 25px; margin-top: 5px; margin-right: 10px;" for="nav-btn"
+                           class="nav-item-show"><i class="fas fa-bars"></i></label>
+                </div>
+            </div>
+            <div class="main-menu">
+                <input type="checkbox" class="nav-btn-hide" id="nav-btn">
+                <ul>
+                    <li id="li-logo" style="margin-right: 80px; vertical-align: middle;">
+                        <a href="{% url 'home' %}"><img src="{% static 'img/logo1.png' %}" style="width: 200px;" alt=""></a>
+                    </li>
+                    <li><a href="{% url 'home' %}">Trang chủ</a></li>
+                    <li><label for="nav-btn-1" class="nav-item-show">Cho thuê BĐS<i
+                            class="fas fa-angle-down"></i></label>
+                        <input type="checkbox" class="nav-btn-hide" id="nav-btn-1">
+                        <a href="#" class="dropdown_item">Cho thuê BĐS<i class="fas fa-angle-down"></i></a>
+                        <ul class="dropdown_menu animated fadeInUp">
+                            <li><a href="{% url 'sp' 0 %}">Tất cả</a></li>
+                            {% for item in navbar %}
+                                <li><a href="{% url 'sp' item.id %}">{{ item.name }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </li>
+                    <li><label for="nav-btn-2" class="nav-item-show">Bán BĐS<i
+                            class="fas fa-angle-down"></i></label>
+                        <input type="checkbox" class="nav-btn-hide" id="nav-btn-2">
+                        <a href="#" class="dropdown_item">Bán BĐS<i class="fas fa-angle-down"></i></a>
+                        <ul class="dropdown_menu animated fadeInUp">
+                            <li><a href="{% url 'sp' 0 %}">Tất cả</a></li>
+                            {% for item in navbar %}
+                                <li><a href="{% url 'sp' item.id %}">{{ item.name }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </li>
+                    <li><a href="{% url 'news' %}">Tin tức</a></li>
+                    <li><a href="{% url 'contact' %}">Liên hệ</a></li>
+                    <li><a href="{% url 'about' %}">Giới thiệu</a></li>
+                    <li style="float: right; margin-top: 18px;" id="li-taikhoan"><label for="nav-btn-3"
+                                                                                        class="nav-item-show">Tài
+                        khoản<i class="fas fa-angle-down"></i></label>
+                        <input type="checkbox" class="nav-btn-hide" id="nav-btn-3">
+                        <a href="#" class="dropdown_item">Tài khoản<i class="fas fa-angle-down"></i></a>
+                        <ul class="dropdown_menu dropdown_menu-right animated fadeInUp">
+                            {% if request.user.is_authenticated %}
+                                <li><a href="{% url 'taikhoan' %}">Thông tin</a></li>
+                                <li><a href="{% url 'dangxuat' %}">Đăng xuất</a></li>
+                            {% else %}
+                                <li><a href="{% url 'dangnhap' %}">Đăng nhập</a></li>
+                                <li><a href="{% url 'dangky' %}">Đăng ký</a></li>
+                            {% endif %}
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</header>
+
+{% block content %}{% endblock %}
+
+<footer>
+    <div class="text-light py-4">
+        <div class="container-fluid p-0">
+            <div class="cursor-default text-center">
+                <div class="logo logo-64 mx-auto mb-2"><img class="img-footer" src="{% static 'img/logo-icon.png' %}"
+                                                            alt="" srcset="">
+                </div>
+                <h4 class="font-logo">
+                    Bất động sản cần thơ
+                </h4>
+                <h6>Thoải mái như ở nhà - Giá rẻ như ở nhà</h6>
+                <hr>
+            </div>
+            <div class="row-footer">
+                <div class="col-lg-3">
+                    <h6 class="footer-h6">Giới thiệu</h6>
+                    <hr class=" mr-5">
+                    <ul class="content-footer">
+                        <li class="my-1"><a href="{% url 'about' %}">Về chúng tôi</a></li>
+                        <li class="my-1"><a href="{% url 'news' %}">Báo chí</a></li>
+                        <li class="my-1"><a href="{% url 'contact' %}">Tuyển dụng</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h6 class="footer-h6">Chương trình</h6>
+                    <hr class=" mr-5">
+                    <ul class="content-footer">
+                        <li class="my-1"><a href="{% url 'doitac' %}">Đối tác kinh doanh</a></li>
+                        <li class="my-1"><a href="{% url 'doitac' %}">Đối tác nhà đất</a></li>
+                        <li class="my-1">
+                            <a href="{% url 'doitac' %}"></a>Khách hàng doanh nghiệp</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h6 class="footer-h6">Chính sách</h6>
+                    <hr class=" mr-5">
+                    <ul class="content-footer">
+                        <li class="my-1"><a href="{% url 'about' %}">Chế độ</a></li>
+                        <li class="my-1"><a href="{% url 'about' %}">Bồi thường</a></li>
+                        <li class="my-1"><a href="{% url 'private' %}">Riêng tư</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h6 class="footer-h6">Hỗ trợ</h6>
+                    <hr class="mr-5">
+                    <ul class="content-footer">
+                        <li class="my-1"><a href="{% url 'contact' %}">Hướng dẫn sử dụng</a></li>
+                        <li class="my-1"><a href="{% url 'about' %}">Câu hỏi thường gặp</a></li>
+                        <li class="my-1"><a href="{% url 'contact' %}">Cẩm nang </a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-contact">
+                <hr>
+                <h6 class="small">Tương tác với chúng tôi</h6>
+                <a href="https://www.facebook.com/" class="text-light mx-1"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.youtube.com/" class="text-light mx-1"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.linkedin.com/" class="text-light mx-1"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.instagram.com/" class="text-light mx-1"><i class="fab fa-instagram"></i></a>
+                <a href="https://github.com/" class="text-light mx-1"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <i>Sản phẩm này chỉ phục vụ cho hoạt động học tập và nghiên cứu, không phục vụ cho mục đích thương
+            mại.</i><br> Mã nguồn mở, Bản quyền &copy; <a href="">SBY</a> - 2021 <br>
+        <span>Hành trang tới Tương lai</span>
+    </div>
+</footer>
+
+<script src="{% static 'lib/js/jquery.min.js' %}"></script>
+<script src="{% static 'lib/js/bootstrap.bundle.min.js' %}"></script>
+{% block script %}{% endblock %}
+</body>
+
+</html>
